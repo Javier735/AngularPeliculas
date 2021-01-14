@@ -27,6 +27,11 @@ import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-peli
 import { FormularioGeneroComponent } from './generos/formulario-genero/formulario-genero.component';
 import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-peliculas.component';
 import { FormularioActoresComponent } from './actores/formulario-actores/formulario-actores.component';
+import { InputImgComponent } from './utilidades/input-img/input-img.component';
+import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component';
+import {MarkdownModule}from 'ngx-markdown';
+import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component';
+import { MapaComponent } from './utilidades/mapa/mapa.component';
 
 
 @NgModule({
@@ -50,14 +55,19 @@ import { FormularioActoresComponent } from './actores/formulario-actores/formula
     EditarPeliculaComponent,
     FormularioGeneroComponent,
     FiltroPeliculasComponent,
-    FormularioActoresComponent
+    FormularioActoresComponent,
+    InputImgComponent,
+    InputMarkdownComponent,
+    FormularioCineComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MarkdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
