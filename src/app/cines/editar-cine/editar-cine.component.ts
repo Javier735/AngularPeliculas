@@ -10,7 +10,7 @@ import { cineDTO } from '../cine';
 export class EditarCineComponent implements OnInit {
 
   constructor() { }
-modelo:cineDTO={nombre:"Mi cine favorito"};
+modelo:cineDTO={nombre:"Mi cine favorito",latitud:20.60065072303873,longitud:-101.16210937500001};
 
   ngOnInit(): void {
   }
