@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CrearActorComponent } from './actores/crear-actor/crear-actor.component';
 import { EditarActorComponent } from './actores/editar-actor/editar-actor.component';
 import { IndiceActoresComponent } from './actores/indice-actores/indice-actores.component';
+import { CarpetaInvComponent } from './carpeta-investigacion/carpeta-inv/carpeta-inv.component';
 import { CrearCineComponent } from './cines/crear-cine/crear-cine.component';
 import { EditarCineComponent } from './cines/editar-cine/editar-cine.component';
 import { IndiceCinesComponent } from './cines/indice-cines/indice-cines.component';
@@ -31,6 +32,9 @@ const routes: Routes = [
   {path:'peliculas/crear',component:CrearPeliculaComponent},
   {path:'peliculas/editar/:id',component:EditarPeliculaComponent},
   {path:'peliculas/buscar',component:FiltroPeliculasComponent},
+
+  {path:'carpeta',component:CarpetaInvComponent},
+
   {path:'**',redirectTo:''}
 ];
 

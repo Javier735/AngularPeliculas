@@ -1,0 +1,199 @@
+<h2>Carpeta de investigación</h2>
+
+<div>
+    <form (ngSubmit)="guardar()" [formGroup]="form">
+        <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre de la fiscalía regional o especializada</mat-label>
+            <input formControlName="NombreFiscaliaRegionalEspecializada" matInput/>
+            <mat-error *ngIf="form.invalid">El campo nombre es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Tipo Fiscalia Regional o especializada</mat-label>
+            <mat-select formControlName="catTipoFiscaliaID">
+                <mat-option *ngFor="let tipoFiscalia of catTipoFiscalia" [value]="tipoFiscalia.id">{{tipoFiscalia.nombre}}</mat-option>            
+            </mat-select>
+        </mat-form-field> 
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre y número de agencia del ministerio público</mat-label>
+            <input formControlName="NombreNumAgencia" matInput/>           
+        </mat-form-field>
+      
+
+          
+            <mat-form-field appearance="outline">
+                <mat-label>Tipo de vialidad</mat-label>
+                <mat-select formControlName="catTipoVialidadId">
+                    <mat-option *ngFor="let tipoVialidad of catTipoVialidad" [value]="tipoVialidad.id">{{tipoVialidad.nombre}}</mat-option>            
+                </mat-select>
+            </mat-form-field> 
+
+            <mat-form-field appearance="outline">
+                <mat-label>Calle (Nombre de la vialidad)</mat-label>
+                <input formControlName="Calle" matInput/>           
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Colonia</mat-label>
+                <mat-select formControlName="catTipoVialidadId">
+                    <mat-option *ngFor="let catColonia of catColonia" [value]="catColonia.id">{{catColonia.nombre}}</mat-option>            
+                </mat-select>
+            </mat-form-field>          
+       
+            <mat-form-field appearance="outline">
+                <mat-label>Número Exterior</mat-label>
+                <input formControlName="NumeroExterior" matInput/>           
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Número interior</mat-label>
+                <input formControlName="NumeroInterior" matInput/>           
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Código postal</mat-label>
+                <input formControlName="CodigoPostal" matInput/>           
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Localidad</mat-label>
+                <input formControlName="Localidad" matInput/>           
+            </mat-form-field>
+
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Municipio</mat-label>
+                <mat-select formControlName="CatMunicipioId">
+                    <mat-option *ngFor="let catmunicipio of catMunicipio" [value]="catmunicipio.id">{{catmunicipio.nombre}}</mat-option>            
+                </mat-select>
+            </mat-form-field>  
+
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Entidad Federativa</mat-label>
+                <mat-select formControlName="CatEntidadFederativaId">
+                    <mat-option *ngFor="let catentidad of catEntidadFederativa" [value]="catentidad.id">{{catentidad.nombre}}</mat-option>            
+                </mat-select>
+            </mat-form-field>  
+
+            <mat-form-field appearance="outline">
+                <mat-label>Latitud</mat-label>
+                <input formControlName="Latitud" matInput/>           
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Longitud</mat-label>
+                <input formControlName="Longitud" matInput/>           
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre del agente del ministerio publico responsable</mat-label>
+                <input formControlName="NombreAgentesMPResponsable" matInput/>           
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Identificador del agente del ministerio publico responsable</mat-label>
+                <input formControlName="IdentificadorAgentesMPResponsable" matInput/>           
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Medio de conocimiento de los hechos</mat-label>
+                <mat-select formControlName="CatMedioConocimientoId">
+                    <mat-option>---------</mat-option>
+                    <mat-option *ngFor="let catMedio of catMedioConocimiento" [value]="catMedio.id">{{catMedio.nombre}}</mat-option>            
+                </mat-select>
+            </mat-form-field>  
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Número de la carpeta de investigación</mat-label>
+                <input formControlName="NumeroCarpetaInvs" matInput/>           
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Número de carpeta en formato numerico</mat-label>
+                <input formControlName="NumeroCarpetaFormatoNumerico" matInput/>           
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Año de carpeta de investigacion</mat-label>
+                <input formControlName="AnioCarpeta" matInput/>           
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Fecha de captura de la carpeta de investigación</mat-label>
+                <input formControlName="FechaCarpInv" matInput [matDatepicker]="picker"/>    
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>   
+            </mat-form-field>
+
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Hora en la que el ministerio público abrió carpeta de investigación</mat-label>
+                <input type="time" formControlName="HoraPublic" matInput />  
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Forma de inicio de la carpeta de investigacíon</mat-label>
+                <mat-select formControlName="catFormaIncioCarpetaId">
+                    <mat-option >---------</mat-option>
+                    <mat-option *ngFor="let catiniciocarp of catFormaIncioCarpeta" [value]="catiniciocarp.id">{{catiniciocarp.nombre}}</mat-option>            
+                </mat-select>
+            </mat-form-field>  
+
+            <mat-form-field appearance="outline">
+                <mat-label>Cantidad de delitos</mat-label>
+                <input type="number" formControlName="HoraPublic" matInput />  
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Cantidad de victimas</mat-label>
+                <input type="number" formControlName="HoraPublic" matInput />  
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Cantidad de imputados</mat-label>
+                <input type="number" formControlName="HoraPublic" matInput />  
+            </mat-form-field>
+
+            
+         
+
+            
+                
+
+
+        </div>
+
+
+     
+
+        <div style="margin-bottom: 1rem;">                    
+            <mat-label>¿Se realizaron actos de investigación?: </mat-label>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Si</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>               
+        </div>
+        <div style="margin-bottom: 1rem;">                    
+            <mat-label>¿Se realizaron  aseguramientos?: </mat-label>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Si</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>               
+        </div>
+
+
+        <div>
+            <button mat-flat-button color="primary" [disabled]="form.invalid">
+                Guardar Cambios
+            </button>
+            <!-- <a mat-stroked-button routerLink="/cines"> 
+                Cancelar
+            </a> -->
+        </div>
+
+    </form>
+</div>
+
