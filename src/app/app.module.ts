@@ -38,6 +38,9 @@ import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/for
 import { SelectorMultipleComponent } from './utilidades/selector-multiple/selector-multiple.component';
 import { AutocompleteActoresComponent } from './actores/autocomplete-actores/autocomplete-actores.component';
 import { CarpetaInvComponent } from './carpeta-investigacion/carpeta-inv/carpeta-inv.component';
+import { NuevaNoticiaComponent } from './noticia/nueva-noticia/nueva-noticia.component';
+import { BuscarNoticiaComponent } from './noticia/buscar-noticia/buscar-noticia.component';
+import { FormCarpetaComponent } from './carpeta-investigacion/formulario/form-carpeta/form-carpeta.component';
 
 
 @NgModule({
@@ -69,7 +72,10 @@ import { CarpetaInvComponent } from './carpeta-investigacion/carpeta-inv/carpeta
     FormularioPeliculaComponent,
     SelectorMultipleComponent,
     AutocompleteActoresComponent,
-    CarpetaInvComponent
+    CarpetaInvComponent,
+    NuevaNoticiaComponent,
+    BuscarNoticiaComponent,
+    FormCarpetaComponent
   ],
   imports: [
     BrowserModule,

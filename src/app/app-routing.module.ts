@@ -14,6 +14,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CrearPeliculaComponent } from './peliculas/crear-pelicula/crear-pelicula.component';
 import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-pelicula.component';
 import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-peliculas.component';
+import {NuevaNoticiaComponent}from './noticia/nueva-noticia/nueva-noticia.component';
+import {BuscarNoticiaComponent}from './noticia/buscar-noticia/buscar-noticia.component';
 
 const routes: Routes = [
   {path:'',component: LandingPageComponent},
@@ -34,6 +36,11 @@ const routes: Routes = [
   {path:'peliculas/buscar',component:FiltroPeliculasComponent},
 
   {path:'carpeta',component:CarpetaInvComponent},
+
+  {path:'noticia/nueva',component:NuevaNoticiaComponent},
+  {path:'noticia/buscar',component:BuscarNoticiaComponent},
+
+  
 
   {path:'**',redirectTo:''}
 ];

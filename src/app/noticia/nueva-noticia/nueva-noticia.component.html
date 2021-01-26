@@ -1,9 +1,9 @@
-<h2>Carpeta de investigación</h2>
+<h2>Nueva noticia</h2>
 
 <div>
     <form (ngSubmit)="guardar()" [formGroup]="form">
+
         <div>
-           
             <mat-form-field appearance="outline">
                 <mat-label>Nombre de la fiscalía regional o especializada</mat-label>
                 <input formControlName="NombreFiscaliaRegionalEspecializada" matInput/>
@@ -30,6 +30,8 @@
                     <mat-option *ngFor="let tipoAgencia of catTipoAgencia" [value]="tipoAgencia.id">{{tipoAgencia.nombre}}</mat-option>            
                 </mat-select>
             </mat-form-field> 
+
+            <mat-divider style="margin-bottom: 1rem;"></mat-divider>
 
             <mat-form-field appearance="outline">
                 <mat-label>Tipo de vialidad</mat-label>
@@ -99,7 +101,18 @@
                 <mat-label>Longitud</mat-label>
                 <input type="number"  formControlName="Longitud" matInput/>           
             </mat-form-field>
-            
+
+            <mat-divider style="margin-bottom: 1rem;"></mat-divider>
+
+            <div style="margin-bottom: 1rem;">                    
+                <mat-label>En caso de no abrir carpeta de investigación, ¿se brindó algún tipo de atención? 
+                </mat-label>
+                <mat-radio-group formControlName="AbrirCarpeta" aria-label="Select an option">
+                    <mat-radio-button value="1">Si</mat-radio-button>
+                    <mat-radio-button value="2">No</mat-radio-button>
+                  </mat-radio-group>               
+            </div>
+
             <mat-form-field appearance="outline">
                 <mat-label>Nombre del agente del ministerio publico responsable</mat-label>
                 <input formControlName="NombreAgentesMPResponsable" matInput/>           
@@ -119,75 +132,70 @@
             </mat-form-field>  
             
             <mat-form-field appearance="outline">
-                <mat-label>Número de la carpeta de investigación</mat-label>
-                <input formControlName="NumeroCarpetaInvs" matInput/>           
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>Número de carpeta en formato numerico</mat-label>
-                <input formControlName="NumeroCarpetaFormatoNumerico" matInput/>           
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>Año de carpeta de investigacion</mat-label>
-                <input formControlName="AnioCarpeta" matInput/>           
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>Fecha de captura de la carpeta de investigación</mat-label>
-                <input formControlName="FechaCarpInv" matInput [matDatepicker]="picker"/>    
+                <mat-label>Fecha de presentación de la denuncia o querella</mat-label>
+                <input formControlName="FechaPresentacionDenunciaQuerella" matInput [matDatepicker]="picker"/>    
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>   
             </mat-form-field>
 
             
             <mat-form-field appearance="outline">
-                <mat-label>Hora en la que el ministerio público abrió carpeta de investigación</mat-label>
-                <input type="time" formControlName="HoraPublic" matInput />  
+                <mat-label>Hora de presentación de la denuncia o querella</mat-label>
+                <input type="time" formControlName="HoraPresentacionDenunciaQuerella" matInput />  
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Forma de inicio de la carpeta de investigacíon</mat-label>
-                <mat-select formControlName="catFormaIncioCarpetaId">
+                <mat-label>Autoridad que recibió la denuncia o querella</mat-label>
+                <mat-select formControlName="CatAutoridadRecibioDenunciaQuerellaID">
                     <mat-option >-----Seleccione----</mat-option>
-                    <mat-option *ngFor="let catiniciocarp of catFormaIncioCarpeta" [value]="catiniciocarp.id">{{catiniciocarp.nombre}}</mat-option>            
+                    <mat-option *ngFor="let catAutoridad of CatAutoridadRecDenun" [value]="catAutoridad.id">{{catAutoridad.nombre}}</mat-option>            
                 </mat-select>
             </mat-form-field>  
 
+            <div style="margin-bottom: 1rem;">                    
+                <mat-label>¿Se inició carpeta de investigación? 
+
+                </mat-label>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Si</mat-radio-button>
+                    <mat-radio-button value="2">No</mat-radio-button>
+                  </mat-radio-group>               
+            </div>
+
             <mat-form-field appearance="outline">
-                <mat-label>Cantidad de delitos</mat-label>
-                <input type="number" formControlName="CantidadDelitos" matInput />  
+                <mat-label>Tipo de atención</mat-label>
+                <mat-select formControlName="CatTipoAtencionID">
+                    <mat-option >-----Seleccione----</mat-option>
+                    <mat-option *ngFor="let catTipo of CatTipoAtencion" [value]="catTipo.id">{{catTipo.nombre}}</mat-option>            
+                </mat-select>
+            </mat-form-field> 
+
+            <mat-form-field appearance="outline">
+                <mat-label>Número de atención</mat-label>
+                <input  type="text"  formControlName="NumeroAtencion" matInput/>           
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Cantidad de victimas</mat-label>
-                <input type="number" formControlName="CantidadVictimas" matInput />  
+                <mat-label>Fecha de inicio de la atención</mat-label>
+                <input formControlName="FechaInicioAtencion" matInput [matDatepicker]="pickerFech"/>    
+                <mat-datepicker-toggle matSuffix [for]="pickerFech"></mat-datepicker-toggle>
+                <mat-datepicker #pickerFech></mat-datepicker>   
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Cantidad de imputados</mat-label>
-                <input type="number" formControlName="CantidadImputados" matInput />  
+                <mat-label>Fecha de conclusión de la atención</mat-label>
+                <input formControlName="FechaConclusionAtencion" matInput [matDatepicker]="pickerCon"/>    
+                <mat-datepicker-toggle matSuffix [for]="pickerCon"></mat-datepicker-toggle>
+                <mat-datepicker #pickerCon></mat-datepicker>   
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Breve descripción o narracion de hechos</mat-label>
-                <textarea formControlName="DescripcionHechos" matInput></textarea>
-              </mat-form-field>       
-        </div>     
-
-        <div style="margin-bottom: 1rem;">                    
-            <mat-label>¿Se realizaron actos de investigación?: </mat-label>
-            <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="1">Si</mat-radio-button>
-                <mat-radio-button value="2">No</mat-radio-button>
-              </mat-radio-group>               
-        </div>
-        <div style="margin-bottom: 1rem;">                    
-            <mat-label>¿Se realizaron  aseguramientos?: </mat-label>
-            <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="1">Si</mat-radio-button>
-                <mat-radio-button value="2">No</mat-radio-button>
-              </mat-radio-group>               
+                <mat-label>Sentido de la conclusión de la atención</mat-label>
+                <mat-select formControlName="CatSentidoConclusionAtencionID">
+                    <mat-option >-----Seleccione----</mat-option>
+                    <mat-option *ngFor="let catSentido of CatSentidoConclusion" [value]="catSentido.id">{{catSentido.nombre}}</mat-option>            
+                </mat-select>
+            </mat-form-field>
         </div>
 
         <div>
@@ -201,5 +209,5 @@
         </div>
 
     </form>
-</div>
 
+</div>

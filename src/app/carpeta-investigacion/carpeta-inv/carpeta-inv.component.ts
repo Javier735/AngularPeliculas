@@ -72,6 +72,7 @@ this.form=this.fb.group({
   catTipoFiscaliaID:[''],
   NombreNumAgencia:[''],
   CatTipoAgenciaID:[''],
+
   catTipoVialidadId:[''],
   Calle:[''],
   CatColoniaId:[''],
@@ -83,21 +84,27 @@ this.form=this.fb.group({
   CatEntidadFederativaId:[''],
   Latitud:[''],
   Longitud:[''],
+
   NombreAgentesMPResponsable:[''],
   IdentificadorAgentesMPResponsable:[''],
   CatMedioConocimientoId:[''],
+
   NumeroCarpetaInvs:[''],
   NumeroCarpetaFormatoNumerico:[''],
   AnioCarpeta:[''],
   FechaCarpInv:[''],
   HoraPublic:[''],
   catFormaIncioCarpetaId:[''],
+  CantidadDelitos:[''],
+  CantidadImputados:[''],
+  CantidadVictimas:[''],
+  DescripcionHechos:['']
    });
 
   }
 
  guardar(){
-    alert('hola mundo');
+    alert('guardar carpeta');
  }
 
 }

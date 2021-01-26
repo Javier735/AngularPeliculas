@@ -14,10 +14,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatTableModule}from '@angular/material/table';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatRadioModule}from '@angular/material/radio';
-
-
-
-
+import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [],
@@ -35,7 +34,10 @@ import {MatRadioModule}from '@angular/material/radio';
     MatAutocompleteModule,
     MatTableModule,
     DragDropModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDividerModule,
+    MatDialogModule,
+    MatGridListModule   
   ],
 
   imports: [
