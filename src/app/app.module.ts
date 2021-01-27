@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import "leaflet/dist/images/marker-shadow.png";
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -85,6 +86,7 @@ import { FormCarpetaComponent } from './carpeta-investigacion/formulario/form-ca
     ReactiveFormsModule,
     LeafletModule,
     FormsModule,
+    HttpClientModule,
     MarkdownModule.forRoot()
   ],
   providers: [],
