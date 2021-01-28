@@ -17,6 +17,7 @@ import {MatRadioModule}from '@angular/material/radio';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [],
@@ -37,7 +38,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatRadioModule,
     MatDividerModule,
     MatDialogModule,
-    MatGridListModule   
+    MatGridListModule,
+    MatPaginatorModule   
   ],
 
   imports: [

@@ -13,6 +13,9 @@ export class FormularioGeneroComponent implements OnInit {
   constructor(private formBuilder:FormBuilder) { }
   form: FormGroup;
   @Input()
+  errores:string[]=[];
+
+  @Input()
   modelo:generoCreacionDTO;
   @Output()
   onSubmit:EventEmitter<generoCreacionDTO>=new EventEmitter<generoCreacionDTO>();

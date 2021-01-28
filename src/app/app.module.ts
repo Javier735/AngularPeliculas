@@ -42,6 +42,7 @@ import { CarpetaInvComponent } from './carpeta-investigacion/carpeta-inv/carpeta
 import { NuevaNoticiaComponent } from './noticia/nueva-noticia/nueva-noticia.component';
 import { BuscarNoticiaComponent } from './noticia/buscar-noticia/buscar-noticia.component';
 import { FormCarpetaComponent } from './carpeta-investigacion/formulario/form-carpeta/form-carpeta.component';
+import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-errores.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { FormCarpetaComponent } from './carpeta-investigacion/formulario/form-ca
     CarpetaInvComponent,
     NuevaNoticiaComponent,
     BuscarNoticiaComponent,
-    FormCarpetaComponent
+    FormCarpetaComponent,
+    MostrarErroresComponent
   ],
   imports: [
     BrowserModule,
